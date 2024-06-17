@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="Description" content="App Lit2 Starter">
+  <base href="/">
+
+  <link rel="">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+
+    html {
+      /* font families */
+      --ff-serif: "Bellefair", serif;
+      --ff-sans-cond: "Barlow Condensed", sans-serif;
+      --ff-sans-normal: "Barlow", sans-serif;
+
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+      font-size: 1rem;
+      font-family: var(--ff-sans-normal);
+    }
+
+    html,
+    body {
+      --gradient: linear-gradient(
+        180deg,
+        rgba(49, 172, 168, 0.73) 0%,
+        #431692 100%
+      );
+      --menu-background: hsl(0 0% 100% / 0.25);
+      --dark: #001747;
+      --grey: #b1bacb;
+      --grey-border: rgba(210, 210, 210, 0.75);
+      --grey-light: #eeeeee;
+      --grey-dark: #405175;
+      --blue: #550cae;
+      --purple-dark: #550cae;
+      --green: #3da73f;
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+
+  </style>
+  <title>app-lit3-starter</title>
+</head>
+
+<body>
+  <lit3-todo-app></lit3-todo-app>
+
+
+  <script type="module" src="./src/app.js"></script>
+</body>
+
+</html>

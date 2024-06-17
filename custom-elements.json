@@ -1,0 +1,517 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/app.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AppLit3Starter",
+          "members": [
+            {
+              "kind": "field",
+              "name": "_router",
+              "default": "new Router(this, routes)"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "lit3-todo-app",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AppLit3Starter",
+          "declaration": {
+            "name": "AppLit3Starter",
+            "module": "src/app.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "lit3-todo-app",
+          "declaration": {
+            "name": "AppLit3Starter",
+            "module": "src/app.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/hamburger-menu.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "HamburgerMenu",
+          "members": [
+            {
+              "kind": "field",
+              "name": "router",
+              "attribute": "router"
+            },
+            {
+              "kind": "field",
+              "name": "selectedRoute",
+              "attribute": "selectedRoute"
+            },
+            {
+              "kind": "field",
+              "name": "active",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "toggleMenu"
+            },
+            {
+              "kind": "method",
+              "name": "renderMenuItems"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "router",
+              "fieldName": "router"
+            },
+            {
+              "name": "selectedRoute",
+              "fieldName": "selectedRoute"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "hamburger-menu",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "HamburgerMenu",
+          "declaration": {
+            "name": "HamburgerMenu",
+            "module": "src/components/hamburger-menu.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "hamburger-menu",
+          "declaration": {
+            "name": "HamburgerMenu",
+            "module": "src/components/hamburger-menu.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/components/hamburger-menu.styles.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "hamburgerMenuStyles",
+          "type": {
+            "text": "array"
+          },
+          "default": "[\n  css`\n    /* ----- Primary Navigation ----- */\n    .primary-navigation {\n      --gap: clamp(1.5rem, 5vw, 3.5rem);\n      --underline-gap: 2rem;\n      list-style: none;\n      margin: 0;\n      background: var(--gradient);\n      position: fixed;\n      z-index: 1000;\n      inset: 0 0 0 auto;\n      width: 20rem;\n      padding: min(20rem, 15vh) 2rem;\n      transform: translateX(100%);\n      transition: transform 500ms ease-in-out;\n      margin-block: 1rem;\n      display: flex;\n      flex-direction: column;\n      gap: 1rem;\n    }\n\n    @supports (backdrop-filter: blur(1rem)) {\n      .primary-navigation {\n        background: var(--menu-background);\n        backdrop-filter: blur(1.5rem);\n      }\n    }\n\n    .primary-navigation.active {\n      transform: translateX(-2%);\n    }\n\n    .primary-navigation a {\n      text-decoration: none;\n    }\n\n    .primary-navigation a > span {\n      font-weight: 600;\n      margin-right: 0.5em;\n    }\n\n    /* ----- Navigation Button ----- */\n    .btn-nav-toggle {\n      display: block;\n      position: absolute;\n      z-index: 2000;\n      right: 1rem;\n      top: 2rem;\n      background: transparent url(${unsafeCSS(iconHamburger)}) no-repeat center center;\n      width: 1.5rem;\n      aspect-ratio: 1;\n      border: 0;\n    }\n\n    .btn-nav-toggle:focus-visible {\n      outline: 5px solid var(--white);\n      outline-offset: 5px;\n    }\n\n    .btn-nav-toggle.active {\n      background: transparent url(${unsafeCSS(iconClose)}) no-repeat;\n    }\n\n    /* Menu Items */\n    ul > * {\n      cursor: pointer;\n      padding: 1rem;\n      border: 0;\n      background-color: transparent;\n    }\n\n    ul > *:hover,\n    ul > *:focus {\n      border-color: var(--white);\n      border-bottom-width: 0.1rem;\n      border-style: solid;\n    }\n\n    ul > .active {\n      color: var(--white);\n    }\n\n  `,\n]"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "hamburgerMenuStyles",
+          "declaration": {
+            "name": "hamburgerMenuStyles",
+            "module": "src/components/hamburger-menu.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/configuration/rollupConfig.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "rollupDevConfig",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n  aliasRollupPlugin: {\n    entries: [\n      {\n        find: '@feat-to-do-list',\n        replacement: path.resolve(__dirname, '../../src/features/to-do-list'),\n      },\n    ],\n  },\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "rollupDevConfig",
+          "declaration": {
+            "name": "rollupDevConfig",
+            "module": "src/configuration/rollupConfig.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/routes/routes.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "ToDoAppRouter",
+          "type": {
+            "text": "object"
+          },
+          "default": "{\n  routes: _routes,\n}"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ToDoAppRouter",
+          "declaration": {
+            "name": "ToDoAppRouter",
+            "module": "src/routes/routes.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/styles/styles.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "globalToDoAppStyles",
+          "type": {
+            "text": "array"
+          },
+          "default": "[\n  css`\n\n    h2 {\n      height: 3rem;\n      color: var(--dark);\n      text-align: center;\n    }\n\n\n    .uppercase {\n      text-transform: uppercase;\n    }\n\n    .letter-spacing-3 {\n      letter-spacing: 3px;\n    }\n\n    .text-white {\n      color: var(--white);\n    }\n\n    .text-dark {\n      color: var(--dark);\n    }\n\n    .text-grey-dark {\n      color: var(--grey-dark);\n    }\n\n    .text-purple-dark {\n      color: var(--purple-dark);\n    }\n  `,\n]"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "globalToDoAppStyles",
+          "declaration": {
+            "name": "globalToDoAppStyles",
+            "module": "src/styles/styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/features/about/about.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "About",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "feat-about",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "About",
+          "declaration": {
+            "name": "About",
+            "module": "src/features/about/about.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "feat-about",
+          "declaration": {
+            "name": "About",
+            "module": "src/features/about/about.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/features/about/about.styles.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "aboutStyles",
+          "type": {
+            "text": "array"
+          },
+          "default": "[\n  css`\n    :host {\n      background: var(--gradient);\n      margin: 0;\n      height: 100vh;\n      display: flex;\n      flex-direction: column;\n      justify-content: space-evenly;\n      align-items: center;\n      --background-color: var(--white);\n    }\n\n    .container {\n      border-radius: 2rem;\n      background: var(--white);\n      padding: 3rem;\n      height: 50%;\n      width: 60%;\n      box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);\n      max-width: 30rem;\n      overflow: hidden;\n      display: flex;\n      flex-direction: column;\n    }\n  `,\n]"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "aboutStyles",
+          "declaration": {
+            "name": "aboutStyles",
+            "module": "src/features/about/about.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/features/archive/archive-list.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ArchiveList",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "feat-archive-list",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ArchiveList",
+          "declaration": {
+            "name": "ArchiveList",
+            "module": "src/features/archive/archive-list.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "feat-archive-list",
+          "declaration": {
+            "name": "ArchiveList",
+            "module": "src/features/archive/archive-list.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/features/archive/archive-list.styles.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "archiveListStyles",
+          "type": {
+            "text": "array"
+          },
+          "default": "[\n  css`\n    :host {\n      background: var(--gradient);\n      margin: 0;\n      height: 100vh;\n      display: flex;\n      flex-direction: column;\n      justify-content: space-evenly;\n      align-items: center;\n      --background-color: var(--white);\n    }\n\n    .container {\n      border-radius: 2rem;\n      background: var(--white);\n      padding: 3rem;\n      height: 50%;\n      width: 60%;\n      box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);\n      max-width: 30rem;\n      overflow: hidden;\n      display: flex;\n      flex-direction: column;\n    }\n  `,\n]"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "archiveListStyles",
+          "declaration": {
+            "name": "archiveListStyles",
+            "module": "src/features/archive/archive-list.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/features/to-do-list/to-do-list.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ToDoList",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "feat-to-do-list",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ToDoList",
+          "declaration": {
+            "name": "ToDoList",
+            "module": "src/features/to-do-list/to-do-list.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "feat-to-do-list",
+          "declaration": {
+            "name": "ToDoList",
+            "module": "src/features/to-do-list/to-do-list.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/features/to-do-list/to-do-list.styles.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "todoListStyles",
+          "type": {
+            "text": "array"
+          },
+          "default": "[\n  css`\n    :host {\n      background: var(--gradient);\n      margin: 0;\n      height: 100vh;\n      display: flex;\n      flex-direction: column;\n      justify-content: space-evenly;\n      align-items: center;\n      --background-color: var(--white);\n    }\n\n    .container {\n      border-radius: 2rem;\n      background: var(--white);\n      padding: 3rem;\n      height: 50%;\n      width: 60%;\n      box-shadow: 0 1rem 3rem 1rem rgba(0, 23, 71, 0.15);\n      max-width: 30rem;\n      overflow: hidden;\n      display: flex;\n      flex-direction: column;\n    }\n\n    .disabled {\n      display: flex;\n      text-decoration: line-through;\n    }\n\n    .counter {\n      border: 0.06rem solid var(--grey-light);\n    }\n\n    .counter-container {\n      height: 2rem;\n      display: flex;\n      justify-content: space-between;\n      color: var(--grey);\n    }\n\n    .counter-container p {\n      align-self: center;\n    }\n\n    .counter-container button {\n      border: none;\n      background-color: transparent;\n      color: var(--grey);\n      font-size: 1rem;\n    }\n  `,\n]"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "todoListStyles",
+          "declaration": {
+            "name": "todoListStyles",
+            "module": "src/features/to-do-list/to-do-list.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/features/to-do-list/components/add-todo.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "AddTodoListItem",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "add-todo-list-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AddTodoListItem",
+          "declaration": {
+            "name": "AddTodoListItem",
+            "module": "src/features/to-do-list/components/add-todo.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "add-todo-list-item",
+          "declaration": {
+            "name": "AddTodoListItem",
+            "module": "src/features/to-do-list/components/add-todo.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/features/to-do-list/components/add-todo.styles.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "addTodoListItemStyles",
+          "type": {
+            "text": "array"
+          },
+          "default": "[\n  css`\n    .btn {\n      color: var(--white);\n      font-size: 1.1rem;\n      padding: 0.7rem 1.5rem;\n      border-radius: 0.3rem;\n      background-color: var(--blue);\n      border: none;\n      position: absolute;\n      right: 0.5rem;\n      bottom: 0.5rem;\n    }\n\n    .input {\n      position: relative;\n      display: flex;\n    }\n\n    .input-field {\n      width: 100%;\n      border: 0.06rem solid #d2d2d2bf;\n      border-radius: 0.5rem;\n      padding: 1.25rem;\n      font-size: 1rem;\n    }\n\n    input[type='text']::placeholder {\n      color: var(--grey);\n    }\n  `,\n]"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "addTodoListItemStyles",
+          "declaration": {
+            "name": "addTodoListItemStyles",
+            "module": "src/features/to-do-list/components/add-todo.styles.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/features/to-do-list/components/overview.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "ToDoListOverview",
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "to-do-list-overview",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ToDoListOverview",
+          "declaration": {
+            "name": "ToDoListOverview",
+            "module": "src/features/to-do-list/components/overview.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "to-do-list-overview",
+          "declaration": {
+            "name": "ToDoListOverview",
+            "module": "src/features/to-do-list/components/overview.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/features/to-do-list/components/overview.styles.js",
+      "declarations": [
+        {
+          "kind": "variable",
+          "name": "todoListOverviewStyles",
+          "type": {
+            "text": "array"
+          },
+          "default": "[\n  css`\n    .container {\n      display: flex;\n      gap: 1rem;\n      flex-grow: 1;\n    }\n\n    .row {\n      height: 2.3rem;\n      display: flex;\n      gap: 1rem;\n      color: var(--grey);\n    }\n\n    ul {\n      padding: 0;\n      margin: 0;\n      overflow-y: scroll;\n    }\n\n    li {\n      display: flex;\n      flex-direction: column;\n      gap: 1.2rem;\n      padding: 1.3rem;\n    }\n\n    li p {\n      display: flex;\n      gap: 1rem;\n      color: var(--dark);\n      align-items: center;\n    }\n\n    li .disabled {\n      color: #8f98a8;\n    }\n\n    .disabled {\n      display: flex;\n      text-decoration: line-through;\n    }\n\n    input[type='checkbox'] {\n      appearance: none;\n      -webkit-appearance: none;\n      -moz-appearance: none;\n      cursor: pointer;\n    }\n\n    input[type='checkbox']::before {\n      content: '\\\\2713';\n      display: inline-block;\n      width: 2rem;\n      height: 2rem;\n      font-size: 1.7rem;\n      text-align: center;\n      border: 0.06rem solid var(--grey-border);\n      border-radius: 50%;\n      color: transparent;\n    }\n\n    input[type='checkbox']:checked::before {\n      color: var(--white);\n      background-color: var(--green);\n      border: 0.06rem solid var(--green);\n      border-radius: 50%;\n    }\n\n    .scroll {\n      scrollbar-width: thin;\n    }\n\n    .scroll::-webkit-scrollbar {\n      width: 0.6rem;\n    }\n\n    .scroll::-webkit-scrollbar-thumb {\n      background-color: var(--blue);\n      border-radius: 0.5rem;\n    }\n\n    .scroll::-webkit-scrollbar-track {\n      display: none;\n    }\n  `,\n]"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "todoListOverviewStyles",
+          "declaration": {
+            "name": "todoListOverviewStyles",
+            "module": "src/features/to-do-list/components/overview.styles.js"
+          }
+        }
+      ]
+    }
+  ]
+}
